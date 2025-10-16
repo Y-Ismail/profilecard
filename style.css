@@ -1,0 +1,104 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family:'Raleway';
+   background-color: beige;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    font-size: 1rem;
+}
+header{
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+}
+img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+svg{
+    width: 20px;
+    height: 20px;
+}
+.card{
+    width: 80%;
+    height: 80%;
+     background-color: white;
+    padding:1.5rem;
+    display: flex;
+    border-radius: 2rem;
+}
+ul{
+    list-style-type: none;
+}
+
+.avatar{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: whitesmoke;
+    border-radius: inherit;
+}
+.writing{
+    width: 60%;
+    padding: 2rem;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+}
+.sections{
+    display: flex;
+    gap: 4rem;
+}
+li{
+    margin: 10px 0;
+}
+.links{
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+}
+
+
+
+@media only screen and (max-width: 500px){
+    .card{
+        flex-direction: column;
+        padding: 0px;
+    }
+
+    .avatar{
+        width: 100%;
+        height: 40%;
+    }
+    img{
+        width: 6em;
+        height: 6em;
+    }
+    .writing{
+        display: block;
+        width: 100%;
+        min-height: 60%;
+        gap: 20px;
+        
+    }
+    .links{
+        display: flex;
+        width: 80%;
+        align-items: center;
+       
+    }
+    li{
+        margin: 5px 0;
+    }
+    
+} 
