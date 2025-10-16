@@ -67,6 +67,13 @@ li{
     justify-content: space-between;
     width: 40%;
 }
+a{
+    text-decoration: none;
+    color: gray;
+}
+a:hover{
+    color: burlywood;
+}
 
 
 
