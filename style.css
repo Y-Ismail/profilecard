@@ -1,23 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+nav{
+    width: 100%;
+}
+
+nav ul{
+    list-style-type: none;
+    display: flex;
+    margin-bottom: 10px;
+    justify-self: center;
+}
+nav ul li{
+    margin: 10px 10px;
+}
+.nav-home{
+    margin-top: -77px;
+}
 
 body{
-    font-family:'Raleway';
-   background-color: beige;
-    justify-content: center;
-    display: flex;
-    align-items: center;
+    font-family:'Raleway', sans-serif;
     height: 100vh;
     font-size: 1rem;
+    animation: fadeIn 0.3s ease-in;
+}
+body.home{
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: beige;
+}
+.main-about{
+    margin: 10px;
+
+}
+body.contact{
+    background-color: beige;
+}
+#form{
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
 }
 header{
     font-size: 25px;
     font-weight: 700;
     text-align: center;
 }
+
 img{
     width: 200px;
     height: 200px;
@@ -27,6 +61,7 @@ svg{
     width: 20px;
     height: 20px;
 }
+
 .card{
     width: 80%;
     height: 80%;
@@ -35,10 +70,10 @@ svg{
     display: flex;
     border-radius: 2rem;
 }
-ul{
-    list-style-type: none;
-}
 
+section h2{
+    margin: 20px 0;
+}
 .avatar{
     width: 40%;
     display: flex;
@@ -59,6 +94,9 @@ ul{
     display: flex;
     gap: 4rem;
 }
+.sections li{
+    list-style: none;
+}
 li{
     margin: 10px 0;
 }
@@ -66,6 +104,7 @@ li{
     display: flex;
     justify-content: space-between;
     width: 40%;
+    list-style: none;
 }
 a{
     text-decoration: none;
@@ -76,6 +115,72 @@ a:hover{
 }
 
 
+@keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+a.active{
+    color: burlywood;
+    
+}
+form{
+    justify-self: center;
+   
+    
+}
+
+input,textarea{
+    
+    display: block;
+    width: 500px;
+    margin-top: 10px;
+    height: 35px;
+    padding-left: 10px;
+    font-family: inherit;
+}
+input:focus,textarea:focus{
+    border: 2px solid skyblue;
+    outline: none;
+}
+button{
+    width: 100%;
+    margin-top: 20px;
+    height: 35px;
+    font-family: inherit;
+    background-color: blanchedalmond;
+    border: 1px solid black;
+        
+
+}
+
+.main-contact h2{
+    text-align: center;
+}
+.main-about{
+    padding: 10px 20px;
+}
+textarea{
+    min-height: 100px;
+    resize: vertical;
+}
+#submit-success{
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    color: green;
+    background-color: lightgreen;
+    padding: 10px;
+}
+.error{
+  color: red;
+  margin-bottom: 10px;
+}
+.hidden{
+    display: none;
+}
+.show{
+    display: block;
+}
 
 @media only screen and (max-width: 500px){
     .card{
@@ -107,5 +212,15 @@ a:hover{
     li{
         margin: 5px 0;
     }
-    
+
+    form{
+        width: 90vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+    input{
+        width: 100%;
+    }
 } 

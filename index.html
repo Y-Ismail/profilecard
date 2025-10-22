@@ -6,13 +6,20 @@
         <title>Profile Card</title>
         <link rel="stylesheet" href="style.css">
         <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        
         <script src="https://kit.fontawesome.com/c10d3c5b4e.js" crossorigin="anonymous"></script>
     </head>
-    <body>
-        <article data-testid="test-profile-card" class="card">
+    
+    <body class="home">
+        <nav class="nav-home">
+        <ul >
+            <li><a href="/" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        </nav>
+       
+        <article data-testid="test-profile-card" class="card home">
             <figure class="avatar" data-testid="test-figure-section">
                 <img  data-testid="test-profile-image" src="smaller.jpg"  alt="profile-image"/>
             </figure>
@@ -46,6 +53,7 @@
             </div>
             </div>
         </article>
+     
         <script src="app.js"></script>
     </body>
 </html>

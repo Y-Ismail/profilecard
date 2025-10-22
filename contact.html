@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body class="contact">
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+    <main class="main-contact">
+        <h2>Contact</h2>
+        <form id="form">
+            <p id="submit-success" data-testid="test-submit-success" class="hidden">Form Submitted Succesfully</p>
+            <label for="name">Name</label>
+            <input id="name" type="text" data-testid="test-contact-name" aria-describedby="nameerror">
+            <p id="nameerror" data-testid="test-contact-error-name" class="error"></p>
+            <label for="email">Email</label>
+            <input id="email" type="mail" data-testid="test-contact-email" aria-describedby="emailerror">
+            <p id="emailerror" data-testid="test-contact-error-email" class="error"></p>
+            <label for="subject">Subject</label>
+            <input id="subject" type="text" data-testid="test-contact-subject" aria-describedby="suberror">
+            <p id="suberror" data-testid="test-contact-error-subject" class="error"></p>
+            <label for="message">Message</label>
+            <textarea  data-testid="test-contact-name" id="message" aria-describedby="errormsg"></textarea>
+            <p id="errormsg" data-testid="test-contact-error-message" class="error"></p>
+            <button data-testid="test-contact-submit" type="submit">Submit</button>
+        </form>
+    </main>
+    <script>
+        const named = document.getElementById('name');
+        const email = document.getElementById('email');
+        const subject = document.getElementById('subject');
+        const message = document.getElementById('message');
+        const form = document.getElementById('form');
+        const nameE = document.getElementById('nameerror');
+        const msgE = document.getElementById('errormsg');
+        const emailE = document.getElementById('emailerror');
+        const subE = document.getElementById('suberror')
+
+        // email.addEventListener('click', (e) => {
+        //   const p = document.querySelectorAll('.error')
+        //   p.classList.toggle('error')
+        // })
+
+        form.addEventListener('submit', (event) => {
+            var emailCheck = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (named.value === '') {
+                nameE.innerText = 'Name is required';
+            } else {
+                nameE.innerText = '';
+            }
+
+            if (message.value.length < 10) {
+                msgE.innerText = 'Must be more than 10 characters';
+            } else {
+                msgE.innerText = '';
+            }
+
+            if (email.value === '') {
+                emailE.innerText = 'Email is required';
+            } else {
+                emailE.innerText = '';
+            }
+            if (subject.value === '') {
+                subE.textContent = 'Subject is required';
+            } else {
+                subE.textContent = '';
+            }
+
+
+            if (!email.value.match(emailCheck) && email.value !== '') {
+                emailE.innerText = 'Email should be  name@example.com'
+            }
+
+
+
+
+
+
+
+            console.log(named.value);
+
+            if (named.value !== '' && message.value.length >= 10) {
+
+                const su = document.getElementById('submit-success');
+
+                su.classList.add('show');
+                setTimeout(() => {
+
+                    su.classList.remove('show')
+                }, 2000);
+                form.reset();
+            }
+
+
+
+            event.preventDefault();
+
+        });
+
+
+    </script>
+</body>
+
+</html>
